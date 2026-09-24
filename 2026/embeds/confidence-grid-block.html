@@ -49,6 +49,10 @@
     color: #666;
     margin: 1em 0 0;
   }
+  .bpc-dwgrid__note a {
+    color: inherit;
+    text-decoration: underline;
+  }
   @media (max-width: 900px) {
     .bpc-dwgrid__panels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
@@ -68,7 +72,7 @@
     <iframe title="Votes nationwide — confidence votes will be counted as intended, by party ID" aria-label="Line chart" id="datawrapper-chart-wUOKP" src="https://datawrapper.dwcdn.net/wUOKP/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="372" data-external="1"></iframe>
   </div>
 
-  <p class="bpc-dwgrid__note">Source: BPC 2022/2024/2026 Election Information Surveys. &ldquo;Confident&rdquo; combines somewhat and very confident. Independents excluded.</p>
+  <p class="bpc-dwgrid__note">Source: <a href="https://github.com/Bipartisan-Policy-Center/election-information-surveys" target="_blank" rel="noopener">BPC 2022/2024/2026 Election Information Surveys</a>. &ldquo;Confident&rdquo; combines somewhat and very confident. Independents excluded.</p>
 </div>
 
 <script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
