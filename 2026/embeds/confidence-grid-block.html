@@ -25,11 +25,31 @@
     font-size: 15px;
     line-height: 1.4;
     color: #181818;
-    margin: 0 0 1.25em;
+    margin: 0 0 .6em;
   }
   .bpc-dwgrid__deck b {
     font-family: "Inter Tight BPC", "Inter Tight", sans-serif;
     font-weight: 700;
+  }
+  .bpc-dwgrid__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25em;
+    margin: 0 0 1.25em;
+    font-family: "Source Serif", Georgia, serif;
+    font-size: 14px;
+    color: #181818;
+  }
+  .bpc-dwgrid__legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: .4em;
+  }
+  .bpc-dwgrid__legend i {
+    width: 18px;
+    height: 3px;
+    border-radius: 2px;
+    background: currentColor;
   }
   .bpc-dwgrid__panels {
     display: grid;
@@ -54,16 +74,61 @@
     text-decoration: underline;
   }
   @media (max-width: 900px) {
-    .bpc-dwgrid__panels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .bpc-dwgrid__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25em;
+    margin: 0 0 1.25em;
+    font-family: "Source Serif", Georgia, serif;
+    font-size: 14px;
+    color: #181818;
+  }
+  .bpc-dwgrid__legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: .4em;
+  }
+  .bpc-dwgrid__legend i {
+    width: 18px;
+    height: 3px;
+    border-radius: 2px;
+    background: currentColor;
+  }
+  .bpc-dwgrid__panels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
   @media (max-width: 560px) {
-    .bpc-dwgrid__panels { grid-template-columns: minmax(0, 1fr); }
+    .bpc-dwgrid__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25em;
+    margin: 0 0 1.25em;
+    font-family: "Source Serif", Georgia, serif;
+    font-size: 14px;
+    color: #181818;
+  }
+  .bpc-dwgrid__legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: .4em;
+  }
+  .bpc-dwgrid__legend i {
+    width: 18px;
+    height: 3px;
+    border-radius: 2px;
+    background: currentColor;
+  }
+  .bpc-dwgrid__panels { grid-template-columns: minmax(0, 1fr); }
   }
 </style>
 
 <div class="bpc-dwgrid">
   <p class="bpc-dwgrid__title">Democrats and Republicans are now equally confident that votes will be counted as intended.</p>
   <p class="bpc-dwgrid__deck">Are you confident that <b>&#95;&#95;&#95;&#95;</b> will be counted as intended?</p>
+
+  <p class="bpc-dwgrid__legend" aria-label="Legend">
+    <span style="color:#2a78d6"><i></i><span style="color:#181818">Democratic</span></span>
+    <span style="color:#d03b3b"><i></i><span style="color:#181818">Republican</span></span>
+  </p>
 
   <div class="bpc-dwgrid__panels">
     <iframe title="Your own vote — confidence votes will be counted as intended, by party ID" aria-label="Line chart" id="datawrapper-chart-7ZMDn" src="https://datawrapper.dwcdn.net/7ZMDn/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="372" data-external="1"></iframe>
