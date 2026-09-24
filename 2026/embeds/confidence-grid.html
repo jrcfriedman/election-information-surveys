@@ -14,16 +14,25 @@
 <div class="wrap">
 <!-- BPC: 4-up Datawrapper grid — paste into a WordPress "Custom HTML" block -->
 <style>
+  /* Same Inter Tight Bold the BPC Datawrapper theme uses for chart titles */
+  @font-face {
+    font-family: "Inter Tight BPC";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("https://static.dwcdn.net/custom/themes/bipartisan-policy-center/InterTight-Bold.woff2") format("woff2"),
+         url("https://static.dwcdn.net/custom/themes/bipartisan-policy-center/InterTight-Bold.woff") format("woff");
+  }
+
   .bpc-dwgrid { margin: 1.5em 0; }
   .bpc-dwgrid__title {
-    font: 700 1.25rem/1.3 inherit;
-    margin: 0 0 .25em;
-  }
-  .bpc-dwgrid__intro {
-    font-size: .95rem;
-    line-height: 1.4;
-    margin: 0 0 1em;
-    max-width: 60ch;
+    font-family: "Inter Tight BPC", "Inter Tight", sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.25;
+    color: #000;
+    margin: 0 0 .75em;
+    max-width: 46ch;
   }
   .bpc-dwgrid__panels {
     display: grid;
@@ -37,7 +46,8 @@
     display: block;
   }
   .bpc-dwgrid__note {
-    font-size: .8rem;
+    font-family: "Source Serif", Georgia, serif;
+    font-size: 13px;
     line-height: 1.4;
     color: #666;
     margin: 1em 0 0;
@@ -51,17 +61,16 @@
 </style>
 
 <div class="bpc-dwgrid">
-  <p class="bpc-dwgrid__title">[insert overall title here]</p>
-  <p class="bpc-dwgrid__intro">[insert overall intro/deck here]</p>
+  <p class="bpc-dwgrid__title">Democrats and Republicans are now equally confident that votes will be counted as intended.</p>
 
   <div class="bpc-dwgrid__panels">
-    <iframe title="Confidence Your Own Vote Will Be Counted as Intended, by Party ID" aria-label="Line chart" id="datawrapper-chart-7ZMDn" src="https://datawrapper.dwcdn.net/7ZMDn/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="372" data-external="1"></iframe>
-    <iframe title="Confidence Votes in Your Community Will Be Counted as Intended, by Party ID" aria-label="Line chart" id="datawrapper-chart-7I5I7" src="https://datawrapper.dwcdn.net/7I5I7/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="372" data-external="1"></iframe>
-    <iframe title="Confidence Votes in Your State Will Be Counted as Intended, by Party ID" aria-label="Line chart" id="datawrapper-chart-ea5ef" src="https://datawrapper.dwcdn.net/ea5ef/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="372" data-external="1"></iframe>
-    <iframe title="Confidence Votes Nationwide Will Be Counted as Intended, by Party ID" aria-label="Line chart" id="datawrapper-chart-wUOKP" src="https://datawrapper.dwcdn.net/wUOKP/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="372" data-external="1"></iframe>
+    <iframe title="Confidence Your Own Vote Will Be Counted as Intended, by Party ID" aria-label="Line chart" id="datawrapper-chart-7ZMDn" src="https://datawrapper.dwcdn.net/7ZMDn/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="372" data-external="1"></iframe>
+    <iframe title="Confidence Votes in Your Community Will Be Counted as Intended, by Party ID" aria-label="Line chart" id="datawrapper-chart-7I5I7" src="https://datawrapper.dwcdn.net/7I5I7/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="372" data-external="1"></iframe>
+    <iframe title="Confidence Votes in Your State Will Be Counted as Intended, by Party ID" aria-label="Line chart" id="datawrapper-chart-ea5ef" src="https://datawrapper.dwcdn.net/ea5ef/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="372" data-external="1"></iframe>
+    <iframe title="Confidence Votes Nationwide Will Be Counted as Intended, by Party ID" aria-label="Line chart" id="datawrapper-chart-wUOKP" src="https://datawrapper.dwcdn.net/wUOKP/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="372" data-external="1"></iframe>
   </div>
 
-  <p class="bpc-dwgrid__note">Source: Bipartisan Policy Center. &ldquo;Confident&rdquo; combines somewhat and very confident. Independents excluded.</p>
+  <p class="bpc-dwgrid__note">Source: BPC 2022/2024/2026 Election Information Surveys. &ldquo;Confident&rdquo; combines somewhat and very confident. Independents excluded.</p>
 </div>
 
 <script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
