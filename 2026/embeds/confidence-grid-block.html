@@ -3,96 +3,97 @@
   /* The same Inter Tight the BPC Datawrapper theme uses, self-hosted by the theme */
   @font-face {
     font-family: "Inter Tight BPC";
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+    font-weight: 400; font-style: normal; font-display: swap;
     src: url("https://static.dwcdn.net/custom/themes/bipartisan-policy-center/InterTight-Regular.woff2") format("woff2"),
          url("https://static.dwcdn.net/custom/themes/bipartisan-policy-center/InterTight-Regular.woff") format("woff");
   }
   @font-face {
     font-family: "Inter Tight BPC";
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
+    font-weight: 700; font-style: normal; font-display: swap;
     src: url("https://static.dwcdn.net/custom/themes/bipartisan-policy-center/InterTight-Bold.woff2") format("woff2"),
          url("https://static.dwcdn.net/custom/themes/bipartisan-policy-center/InterTight-Bold.woff") format("woff");
   }
 
+  /* Selectors are doubled and typography is !important so the host theme's
+     .entry-content p rules (higher specificity) cannot override them. */
   .bpc-dwgrid { margin: 1.5em 0; }
 
-  .bpc-dwgrid__title {
-    font-family: "Inter Tight BPC", "Inter Tight", sans-serif;
-    font-weight: 700;
-    font-size: 22px;
-    line-height: 1.25;
-    color: #000;
-    margin: 0 0 .25em;
+  .bpc-dwgrid p.bpc-dwgrid__title {
+    font-family: "Inter Tight BPC", "Inter Tight", sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 22px !important;
+    line-height: 1.25 !important;
+    color: #000 !important;
+    margin: 0 0 .25em !important;
     max-width: 46ch;
   }
 
-  .bpc-dwgrid__deck {
-    font-family: "Source Serif", Georgia, serif;
-    font-size: 15px;
-    line-height: 1.4;
-    color: #181818;
-    margin: 0 0 .6em;
+  .bpc-dwgrid p.bpc-dwgrid__deck {
+    font-family: "Source Serif 4", "Source Serif", Georgia, serif !important;
+    font-weight: 400 !important;
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+    color: #181818 !important;
+    margin: 0 0 .6em !important;
   }
-  .bpc-dwgrid__deck b {
-    font-family: "Inter Tight BPC", "Inter Tight", sans-serif;
-    font-weight: 700;
+  .bpc-dwgrid p.bpc-dwgrid__deck b {
+    font-family: "Inter Tight BPC", "Inter Tight", sans-serif !important;
+    font-weight: 700 !important;
   }
 
-  .bpc-dwgrid__legend {
+  .bpc-dwgrid p.bpc-dwgrid__legend {
     display: flex;
     flex-wrap: wrap;
     gap: 1.25em;
-    margin: 0 0 1.25em;
-    font-family: "Inter Tight BPC", "Inter Tight", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    color: #181818;
+    margin: 0 0 1.25em !important;
+    font-family: "Inter Tight BPC", "Inter Tight", sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    color: #181818 !important;
   }
-  .bpc-dwgrid__legend span {
+  .bpc-dwgrid .bpc-dwgrid__legend span {
     display: inline-flex;
     align-items: center;
     gap: .4em;
+    font: inherit !important;
   }
-  .bpc-dwgrid__legend i {
-    width: 18px;
-    height: 3px;
-    border-radius: 2px;
+  .bpc-dwgrid .bpc-dwgrid__legend i {
+    width: 18px; height: 3px; border-radius: 2px;
     background: currentColor;
+    flex: none;
   }
 
-  .bpc-dwgrid__panels {
+  .bpc-dwgrid .bpc-dwgrid__panels {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 16px;
   }
-  .bpc-dwgrid__panels > iframe {
+  .bpc-dwgrid .bpc-dwgrid__panels > iframe {
     width: 0;
     min-width: 100% !important;
     border: none;
     display: block;
   }
 
-  .bpc-dwgrid__note {
-    font-family: "Source Serif", Georgia, serif;
-    font-size: 13px;
-    line-height: 1.4;
-    color: #666;
-    margin: 1em 0 0;
+  .bpc-dwgrid p.bpc-dwgrid__note {
+    font-family: "Source Serif 4", "Source Serif", Georgia, serif !important;
+    font-weight: 400 !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    color: #666 !important;
+    margin: 1em 0 0 !important;
   }
-  .bpc-dwgrid__note a {
-    color: inherit;
+  .bpc-dwgrid p.bpc-dwgrid__note a {
+    color: inherit !important;
     text-decoration: underline;
   }
 
   @media (max-width: 900px) {
-    .bpc-dwgrid__panels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .bpc-dwgrid .bpc-dwgrid__panels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
   @media (max-width: 560px) {
-    .bpc-dwgrid__panels { grid-template-columns: minmax(0, 1fr); }
+    .bpc-dwgrid .bpc-dwgrid__panels { grid-template-columns: minmax(0, 1fr); }
   }
 </style>
 
