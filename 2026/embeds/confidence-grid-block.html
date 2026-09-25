@@ -64,9 +64,13 @@
     flex: none;
   }
 
+  /* Columns are chosen from the panel's own width, not the viewport: the host
+     theme's content column is what matters and it does not track the viewport.
+     190px is above the ~180px width at which the longest panel label wraps to
+     two lines, which knocks the plot areas out of alignment. */
   .bpc-dwgrid .bpc-dwgrid__panels {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     gap: 16px;
   }
   .bpc-dwgrid .bpc-dwgrid__panels > iframe {
@@ -89,12 +93,6 @@
     text-decoration: underline;
   }
 
-  @media (max-width: 900px) {
-    .bpc-dwgrid .bpc-dwgrid__panels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  }
-  @media (max-width: 560px) {
-    .bpc-dwgrid .bpc-dwgrid__panels { grid-template-columns: minmax(0, 1fr); }
-  }
 </style>
 
 <div class="bpc-dwgrid">
