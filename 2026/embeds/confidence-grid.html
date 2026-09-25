@@ -26,7 +26,14 @@
 
   /* Selectors are doubled and typography is !important so the host theme's
      .entry-content p rules (higher specificity) cannot override them. */
-  .bpc-dwgrid { margin: 1.5em 0; }
+  /* Establishes a query container so the breakpoints below measure the block's
+     own width. The host theme's content column does not track the viewport, so
+     viewport media queries fire at the wrong moments. */
+  .bpc-dwgrid {
+    margin: 1.5em 0;
+    container-type: inline-size;
+    container-name: bpcgrid;
+  }
 
   .bpc-dwgrid p.bpc-dwgrid__title {
     font-family: "Inter Tight BPC", "Inter Tight", sans-serif !important;
@@ -80,8 +87,23 @@
      two lines, which knocks the plot areas out of alignment. */
   .bpc-dwgrid .bpc-dwgrid__panels {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     gap: 16px;
+    /* Fallback for browsers without container queries: reflows on panel width,
+       but may land on an awkward 3 + 1. Overridden below where supported. */
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  }
+
+  /* 4 across needs 4 x 190px panels + 3 x 16px gaps = 808px of container.
+     Below that, go straight to 2 x 2 -- never 3 with an orphan. */
+  @container bpcgrid (min-width: 808px) {
+    .bpc-dwgrid .bpc-dwgrid__panels { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+  @container bpcgrid (max-width: 807.98px) {
+    .bpc-dwgrid .bpc-dwgrid__panels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  /* 2 across needs 2 x 190px + 16px = 396px. Below that, single column. */
+  @container bpcgrid (max-width: 395.98px) {
+    .bpc-dwgrid .bpc-dwgrid__panels { grid-template-columns: minmax(0, 1fr); }
   }
   .bpc-dwgrid .bpc-dwgrid__panels > iframe {
     width: 0;
